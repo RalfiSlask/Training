@@ -1,10 +1,13 @@
-function getElementsAfter(array, n) {
-    // your code here
-    let filteredArray = array.map((element, index) => element = 4);
+// Write your function here
+const getElementsGreaterThan10AtProperty = (obj, key) => {
+    if(!(Array.isArray(obj[key])) || !obj[key] || obj[key].length === 0) return undefined;
+
+    const filteredArray = obj[key].filter(el => el > 10);
     return filteredArray;
-  }
-  
-  let output = getElementsAfter(['a', 'b', 'c', 'd', 'e'], 2); 
-  console.log(output); // --> ['d', 'e']
-  
-let string = 'Gej';
+}
+
+let obj = {
+    key: [1, 20, 30]
+  };
+  let output = getElementsGreaterThan10AtProperty(obj, 'key');
+  console.log(output); // --> [20, 30]
